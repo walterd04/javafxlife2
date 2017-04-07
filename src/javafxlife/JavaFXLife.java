@@ -66,8 +66,9 @@ public class JavaFXLife extends Application {
         final Menu speedMenu = new Menu("Speed");
         final Menu optionsMenu = new Menu("Options");
         final Menu helpMenu = new Menu("Help");
+        final Menu colors = new Menu("Colors");
 
-        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu);
+        myBar.getMenus().addAll(fileMenu, speedMenu, optionsMenu, helpMenu, colors);
 
         /**
          * *********************************************************************
@@ -219,6 +220,20 @@ public class JavaFXLife extends Application {
             alert.showAndWait();
         });
         helpMenu.getItems().add(about);
+        
+        
+        //Color Menu Selection
+        
+        MenuItem blue = new MenuItem("Blue");
+        blue.setOnAction(e -> lifePane.setCellColor("blue"));
+        
+        MenuItem red = new MenuItem("Red");
+        red.setOnAction(e -> lifePane.setCellColor("red"));
+        
+        MenuItem green = new MenuItem("Green");
+        green.setOnAction(e -> lifePane.setCellColor("green"));
+
+        colors.getItems().addAll(red, green, blue);
 
         return myBar;
     }
